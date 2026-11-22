@@ -28,6 +28,11 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Generate Android platform scaffolding
+        run: |
+          flutter create --platforms=android --project-name codage /tmp/codage_scaffold
+          cp -r /tmp/codage_scaffold/android ./android
+
       - name: Flutter version
         run: flutter --version
 
